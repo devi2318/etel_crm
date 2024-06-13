@@ -78,6 +78,7 @@ function Login() {
       >
        <p>hi</p> 
        <p>How are you</p> 
+        <p>fine</p>
         <Image
           src={Logo}
           alt="FastAPI logo"
