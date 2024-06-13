@@ -31,16 +31,16 @@ jobs:
 
       - name: Pull latest changes
         run: |
-          cd ~/actions-runner/etel_crm/
+          cd ~/etel_crm/actions-runner/
           git fetch origin main
           git reset --hard origin/main
 
       - name: Build Docker containers
         run: |
-          cd ~/actions-runner/etel_crm/
+          cd ~/etel_crm/actions-runner/
           sudo docker compose -f docker-compose.yml --project-name ${{ secrets.STACK_NAME_STAGING }} build
 
       - name: Deploy Docker containers
         run: |
-          cd ~/actions-runner/etel_crm/
+          cd ~/etel_crm/actions-runner/
           sudo docker compose -f docker-compose.yml --project-name ${{ secrets.STACK_NAME_STAGING }} up
